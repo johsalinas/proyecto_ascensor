@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+{% load pwa %}
+<head>
+  {% progressive_web_app_meta %}<!-- contiene el scrip que registra el service worker -->
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href='{%static "images/icons/favicon.ico"%}' />
+  <title>Ascensores Lipian | Ascensores, Escaleras Mecánicas, Montacargas</title>
+  <meta name="keywords" content="venta, mantención, instalación, certificada, ascensor hidráulico, ascensor eléctrico, ascensor con sala de máquinas, ascensor sin sala de máquinas, montacargas industriales, escaleras mecánicas, elevador para discapacitados, plataformas, salvaescaleras, ascensores.">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="distribution" content="global">
+  <meta name="googlebot" content="index, follow">
+  <meta name="robots" content="index, follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="rating" content="general">
+
+  <!-- css -->
+  <link type="text/css" href='{%static "bootstrap/css/bootstrap.css"%}' rel="stylesheet">
+  <link rel="stylesheet" href='{%static "css/css.css"%}'>
+  <link type="text/css" href='{%static "icons/font-awesome/css/font-awesome.css"%}' rel="stylesheet">
+  <link type="text/css" href='{%static "icons/rondo/style.css"%}' rel="stylesheet">
+  <link type="text/css" href='{%static "css/theme.css"%}' rel="stylesheet">
+
+  <!--Scripts-->
+  <script src='{%static "js/jquery-1.10.2.min.js"%}'></script>
+  <script src='{%static "bootstrap/js/bootstrap.min.js"%}'></script>
+  <script src='{%static "js/jquery.smooth-scroll.min.js"%}'></script>
+  <script src='{%static "js/mixitup/jquery.mixitup.min.js"%}'></script>
+  <script src='{%static "js/theme.js"%}'></script>
+  <script>
+    $('.nav-tabs a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    })
+  </script>
+
+  <!-- MA5 Slider-->
+  <script src='{%static "js/run_prettify.js"%}'></script>
+  <script src='{%static "js/jquery.min.js"%}'></script>
+  <script src='{%static "js/jquery-ui.min.js"%}'></script>
+  <script src='{%static "js/jquery.ui.touch-punch.min.js"%}'></script>
+  <script src='{%static "js/functions.js"%}'></script>
+  <link href='{%static "css/ma5slider.min.css"%}' rel="stylesheet" type="text/css">
+  <script src='{%static "js/ma5slider.min.js"%}'></script>
+  <script>
+    $(window).on('load', function () {
+      $('.ma5slider').ma5slider();
+      // Methods
+      $('#example-34').ma5slider('goToSlide', 3);
+      // Calls
+      $('#example-34').on('ma5.animationStart', function () {
+        console.log('event animationStart');
+      });
+      $('#example-34').on('ma5.animationEnd', function () {
+        console.log('event animationEnd');
+      });
+      $('#example-34').on('ma5.firstSlide', function () {
+        console.log('event firstSlide');
+      });
+      $('#example-34').on('ma5.lastSlide', function () {
+        console.log('event lastSlide');
+      });
+      $('#example-34').on('ma5.activeSlide', function (event, slide) {
+        console.log('event activeSlide: ' + slide);
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <header class="header" id="jump">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div id="logo">
+            <img src='{%static "images/Logo.png"%}' alt="" />
+          </div>
+
+        </div>
+
+        <div class="collapse navbar-collapse hidden-xs">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#jump0">Home</a></li>
+            <li><a href="#jump1">Servicios</a></li>
+            <li><a href="#jump2">Portafolio</a></li>
+            <li><a href="#jump3">Cotizaciones</a></li>
+            <li><a href="#jump4">Equipo</a></li>
+            <li><a href="#jump5">Contáctanos</a></li>
+            <li><a href="login/">Login</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+
+        <div class="collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#jump0" data-toggle="collapse" data-target=".navbar-responsive-collapse">Home</a></li>
+            <li><a href="#jump1" data-toggle="collapse" data-target=".navbar-responsive-collapse">Servicios</a></li>
+            <li><a href="#jump2" data-toggle="collapse" data-target=".navbar-responsive-collapse">Portafolio</a></li>
+            <li><a href="#jump3" data-toggle="collapse" data-target=".navbar-responsive-collapse">Cotizaciones</a></li>
+            <li><a href="#jump4" data-toggle="collapse" data-target=".navbar-responsive-collapse">Equipo</a></li>
+            <li><a href="#jump5" data-toggle="collapse" data-target=".navbar-responsive-collapse">Contáctanos</a></li>
+            <li><a href="login/" data-toggle="collapse" data-target=".navbar-responsive-collapse">Login</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-responsive-collapse -->
+      </div>
+    </nav>
+  </header>
+
+  <div id="margen"></div>
+  <div class="jumper" id="jump0"></div>
+  <div id="carrusel" class="ma5slider hover-navs hover-dots anim-horizontal outside-dots center-dots inside-navs loop-mode autoplay"
+    data-tempo="3500">
+    <div class="slides">
+      <a href="#slide-1" data-ma5-anim="anim-fade"><img src='{%static "./images/01.jpg"%}' alt=""></a>
+      <a href="#slide-2" data-ma5-anim="anim-fade"><img src='{%static "./images/02.jpg"%}' alt=""></a>
+      <a href="#slide-3" data-ma5-anim="anim-fade"><img src='{%static "./images/03.jpg"%}' alt=""></a>
+      <a href="#slide-4" data-ma5-anim="anim-fade"><img src='{%static "./images/04.jpg"%}' alt=""></a>
+      <a href="#slide-5" data-ma5-anim="anim-fade"><img src='{%static "./images/05.jpg"%}' alt=""></a>
+      <a href="#slide-6" data-ma5-anim="anim-fade"><img src='{%static "./images/06.jpg"%}' alt=""></a>
+      <a href="#slide-7" data-ma5-anim="anim-fade"><img src='{%static "./images/07.jpg"%}' alt=""></a>
+      <a href="#slide-8" data-ma5-anim="anim-fade"><img src='{%static "./images/08.jpg"%}' alt=""></a>
+      <a href="#slide-9" data-ma5-anim="anim-fade"><img src='{%static "./images/09.jpg"%}' alt=""></a>
+      <a href="#slide-10" data-ma5-anim="anim-fade"><img src='{%static "./images/10.jpg"%}' alt=""></a>
+    </div>
+  </div>
+
+  <div id="imagen" class="col-lg-2"><img src='{%static "images/clients/partner1-150x100.png"%}' alt="" /></div>
+  <div id="imagen" class="col-lg-2"><img src='{%static "images/clients/partner2.png"%}' alt="" /></div>
+  <div id="imagen" class="col-lg-2"><img src='{%static "images/clients/partner3.png"%}' alt="" /></div>
+  <div id="imagen" class="col-lg-2"><img src='{%static "images/clients/partner4.png"%}' alt="" /></div>
+  <div id="imagen" class="col-lg-2"><img src='{%static "images/clients/partner5.png"%}' alt="" /></div>
+  <div id="imagen" class="col-lg-2"><img src='{%static "images/clients/partner6-150x100.png"%}' alt="" /></div>
+
+  <div id="jump1" class="jumper"></div>
+  <!-- Services -->
+  <div class="section type-2">
+    <div class="container">
+      <div class="section-headlines">
+        <h4>Nuestros Servicios</h4>
+        <div> Ofrecemos nuestros productos de acuerdo a cada necesidad.
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 features text-center"> <img src='{%static "images/clients/ascensor-con-sala-de-maquinas.jpg"%}'
+            alt="" /> </div>
+        <div class="col-lg-6 features">
+          <div class="media"> <img src='{%static "images/clients/mrl-category.png"%}' alt="" />
+            <div class="media-body">
+              <h3>Ascensor Eléctrico</h3>
+              <div>Sin Sala de Máquinas</div>
+            </div>
+          </div>
+          <br class="gap-30" />
+          <div class="media">
+            <img src='{%static "images/clients/opt-category.png"%}' alt="" />
+            <div class="media-body">
+              <h3>Ascensor para Espacios Reducidos</h3>
+              <div>Ascensor de Tráfico Alto.
+                Residencial - Comercial</div>
+            </div>
+          </div>
+          <br class="gap-30" />
+          <div class="media">
+            <img src='{%static "images/clients/mr-category.png"%}' alt="" />
+            <div class="media-body">
+              <h3>Ascensor Eléctrico</h3>
+              <div>Ascensor de Tráfico Alto.
+                Residencial - Comercial - Centros de Salud
+                Todo tipo de Altura.</div>
+            </div>
+          </div>
+          <br class="gap-30" />
+          <div class="media">
+            <img src='{%static "images/clients/mcam-category.png"%}' alt="" />
+            <div class="media-body">
+              <h3>Ascensor Monta Camillas</h3>
+              <div>Ascensor de Tráfico Alto. Hospitales - Clínicas - Centros Médicos. Todo tipo de Altura.</div>
+            </div>
+          </div>
+          <div class="visible-xs visible-sm"> <br class="gap-30" />
+            <hr class="gap-divider" />
+            <br class="gap-30" />
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">© 1996 - 2018 Ascensores Lipian. All Rights Reserved. Lipian S.A. *La información,
+          fotografías y archivos de descargas en ascensoreslipian.cl, están basadas en la información disponible al
+          momento de la publicación. Este sitio, es solamente una guía informativa referencial.
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- registrador de archivos idb.js, idbop.js -->
+  <script type="text/javascript" src="{% static 'js/idb.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/idbop.js' %}"></script>
+</body>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Administracion</title>
+    <link rel="stylesheet" href='{%static "css/administracion.css"%}'>
+    <link rel="icon" type="image/png" href='{%static "images/icons/favicon.ico"%}'/>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header">
+        <div class="shell">
+            <!-- Logo + Top Nav -->
+            <div id="top">
+                <h1><a href="#">Administracion</a></h1>
+                <div id="top-navigation">
+                    Bienvenido <a href="#"><strong></strong></a>
+                    <span>|</span>
+                    <a href="#">ayuda</a>
+                    <span>|</span>
+                    <a href="#">configuraciones</a>
+                    <span>|</span>
+                    <a href="/login/">Log out</a>
+                </div>
+            </div>
+            <!-- End Logo + Top Nav -->
+
+        </div>
+    </div>
+    <!-- End Header -->
+
+    <!-- Container -->
+    <div id="container">
+        <div class="shell">
+            <br />
+            <!-- Main -->
+            <div id="main">
+                <div class="cl">&nbsp;</div>
+
+                <!-- Contenido 1 -->
+                <div id="content">
+
+                    <!-- Box -->
+                    <div class="box">
+                        <!-- Box Head -->
+                        <div class="box-head">
+                            <h2 class="left">Lista de tecnicos</h2>
+                        </div>
+                        <!-- End Box Head -->
+
+                            <!-- Table -->
+                            <div class="table">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Password</th>
+                                        <th>Es técnico</th>
+                                        <th width="110" class="ac">Control de contenidos</th>
+                                    </tr>
+                                    {% for t in tec %}
+                                    <tr>
+                                        <td>
+                                            <h3>{{t.usuario}}</h3>
+                                        </td>
+                                        <td>{{t.password}}</td>
+                                        <td>{{t.es_tecnico}}</td>
+
+                                        <td><a href="/administracion/eliminar/{{t.pk}}" class="ico del">Borrar</a>
+                                        <a href="/administracion/editar/{{t.pk}}" class="ico edit">Editar</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                            <!-- Table -->
+                            <div class="buttons">
+                                <a href="/administracion/nuevo/">Nuevo</a>
+                            </div>
+                    </div>
+                    <!-- End Box -->
+                </div>
+                <!-- End Contenenido 1 -->
+
+                <!-- Contentenido 2 -->
+                <div id="content">
+                        <!-- Box -->
+                        <div class="box">
+                            <!-- Box Head -->
+                            <div class="box-head">
+                                <h2 class="left">Lista de clientes</h2>
+                            </div>
+                            <!-- End Box Head -->
+
+                                <!-- Table -->
+                                <div class="table">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Direccion</th>
+                                            <th>Ciudad</th>
+                                            <th>Comuna</th>
+                                            <th>Telefono</th>
+                                            <th>Correo</th>
+                                            <th>Tecnico asignado</th>
+                                            <th width="110" class="ac">Control de contenidos</th>
+                                        </tr>
+                                        {% for c in cli %}
+                                        <tr>
+                                            <td>
+                                                <h3>{{c.nombre}}</h3>
+                                            </td>
+                                            <td>{{c.direccion}}</td>
+                                            <td>{{c.ciudad}}</td>
+                                            <td>{{c.comuna}}</td>
+                                            <td>{{c.telefono}}</td>
+                                            <td>{{c.correo}}</td>
+                                            <td>{{c.tecnicoAsignado}}</td>                                            
+                                            <td><a href="/cliente/eliminar/{{c.pk}}" class="ico del">Borrar</a>
+                                            <a href="/cliente/editar/{{c.pk}}" class="ico edit">Editar</a></td>
+                                        </tr>
+                                        {% endfor %}
+                                    </table>
+                                </div>
+                                <!-- Table -->
+                                <div class="buttons">
+                                    <a href="/cliente/nuevo/">Nuevo</a>
+                                </div>
+                        </div>
+                        <!-- End Box -->
+                    </div>
+                    <!-- End Contentenido 2 -->
+            </div>
+            <!-- Main -->
+        </div>
+    </div>
+    <!-- End Container -->
+</body>
+
+</html>
